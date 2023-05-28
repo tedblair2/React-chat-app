@@ -1,7 +1,339 @@
-.App {
+/* .App {
   text-align: center;
+} */
+.container{
+  height: 100vh;
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
+.formwrapper{
+  background-color: white;
+  padding: 20px 60px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formwrapper .logo{
+  font-size: 24px;
+  font-weight: bold;
+  color: darkblue;
+  margin-bottom: 10px;
+}
+.formwrapper .title{
+  font-size: 12px;
+  font-weight: bold;
+  color: darkblue;
+  margin-bottom: 10px;
+}
+.formwrapper form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+form input{
+  padding: 15px;
+  border: none;
+  border-bottom: 1px solid lightblue;
+  outline: none;
+  width: 250px;
+}
+form input::placeholder{
+  color: lightgray;
+}
+form button{
+  background-color: lightblue;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  width: 300px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+form label{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: darkblue;
+  font-size: 13px;
+  cursor: pointer;
+}
+label img{
+  width: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.formwrapper p{
+  color: rgb(107, 106, 106);
+  font-size: 12px;
+  margin-top: 14px;
+}
+.home{
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.homecontainer{
+  border-radius: 8px;
+  border: 1px solid white;
+  width: 65%;
+  height: 80%;
+  display: flex;
+  overflow: hidden;
+}
+.homecontainer .sidebar{
+  flex: 1;
+  background-color: #3e3c61;
+}
+.homecontainer .chat{
+  flex: 2;
+}
+.homecontainer .defaultpage{
+  flex: 2;
+}
+.homecontainer .errorpage{
+  flex: 2;
+  display: flex;
+  background-color: #b1b1cf;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.defaultpage{
+  display: flex;
+  background-color: #b1b1cf;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.defaultpage img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.defaultpage span{
+  color: white;
+  font-weight: 600;
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  background-color: #2f2d52;
+  height: 45px;
+  color: white;
+  padding: 10px;
+  justify-content: space-between;
+}
+.navbar .logo{
+  font-weight: bold;
+}
+.navbar .user{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.user img{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: white;
+  object-fit: cover;
+}
+.user button{
+  background-color: #5d5b8d;
+  color: white;
+  font-size: 11px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px 5px;
+  border-radius: 5px;
+}
+.sidebar .search{
+  border-bottom: 1px solid gray;
+}
+.sidebar .search a{
+  text-decoration: none;
+}
+.sidebar .chats a{
+  text-decoration: none;
+}
+.sidebar .userchat{
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 10px 5px;
+  column-gap: 8px;
+  cursor: pointer;
+}
+.userchat .userchatinfo{
+  display: flex;
+  flex-direction: column;
+}
+.userchatinfo span{
+  font-size: 17px;
+  font-weight: 500;
+}
+.userchatinfo p{
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  white-space: nowrap;
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: lightgray;
+}
+.sidebar .userchat:hover{
+  background-color: #2f2d52;
+}
+.userchat img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.search .searchform{
+  margin: 7px;
+  gap: 10px;
+}
+.search .searchform input{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  padding: 14px 5px;
+  margin-left: 5px;
+  width: 94%;
+  margin-bottom: 7px;
+  margin-right: 5px;
+  border-bottom: 1px solid lightgray;
+}
+.search .searchform .none{
+  padding: 50px;
+  color: white;
+  font-size: 15px;
+}
+.chat .chatinfo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding-left: 6px;
+  background-color: #5d5b8d;
+  color: lightgray;
+}
+.chatinfo .chaticons{
+  gap: 10px;
+  display: flex;
+  padding-right: 10px;
+}
+.chaticons img{
+  height: 25px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.chat .messages{
+  background-color: #ddddf7;
+  overflow-y: auto;
+  padding: 10px;
+  height: calc(100% - 130px);
+}
+.chat .input{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  background-color: white;
+  padding: 10px;
+}
+.input input{
+  border: none;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  color: #2f2d52;
+  font-size: 18px;
+}
+.input input::placeholder{
+  color: lightgray;
+}
+.input .send{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+}
+.input .send .icon{
+  font-size: 20px;
+  cursor: pointer;
+}
+.send button{
+  background-color:rgb(118, 195, 221);
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.messages .message{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.message .msginfo{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(119, 117, 117);
+  font-weight: 300;
+  font-size: 13px;
+}
+.message .msginfo img{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.message .msgcontent{
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.message .msgcontent p{
+  color: black;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 0 10px 10px 10px;
+  max-width: max-content;
+}
+.message .msgcontent img{
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+}
+.message.owner{
+  flex-direction: row-reverse;
+}
+.message.owner .msgcontent{
+  align-items: flex-end;
+}
+.message.owner p{
+  background-color: rgb(118, 195, 221);
+  color: white;
+  border-radius: 10px 0 10px 10px;
+  max-width: max-content;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
